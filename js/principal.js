@@ -20,16 +20,19 @@ var pacientes = document.querySelectorAll(".paciente");
         if(peso <= 0 || peso >= 1000){
             pesoValido = false;
             tdImc.textContent = "Peso inválido";
+            paciente.style.backgroundcolor = "lightcoral";
         }
 
         if(altura <= 0 || altura >= 3.0){
             alturaValida = false;
             tdImc.textContent = "Altura inválida";
+            paciente.style.color = "red";
+            paciente.style.backgroundcolor = "lightcoral";
         }
 
         if(pesoValido && alturaValida){
             var imc = peso / (altura * altura);
-            tdImc.textContent = imc;
+            tdImc.textContent = imc.toFixed(2);
         }
     }
 
