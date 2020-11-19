@@ -20,14 +20,13 @@ var pacientes = document.querySelectorAll(".paciente");
         if(peso <= 0 || peso >= 1000){
             pesoValido = false;
             tdImc.textContent = "Peso inválido";
-            paciente.style.backgroundcolor = "lightcoral";
+            paciente.classList.add("paciente-invalido");
         }
 
         if(altura <= 0 || altura >= 3.0){
             alturaValida = false;
             tdImc.textContent = "Altura inválida";
-            paciente.style.color = "red";
-            paciente.style.backgroundcolor = "lightcoral";
+            paciente.classList.add("paciente-invalido");
         }
 
         if(pesoValido && alturaValida){
